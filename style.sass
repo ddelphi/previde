@@ -1,0 +1,860 @@
+
+// layout params
+$siteWidth: 100%
+$pageWidth: auto
+$siteBackground: #FFF
+
+// normalize params
+$linkNormalColor: #FFAA6A
+$linkVisitedColor: #FFAA6A
+$linkHoverColor: #FFD9BD
+$linkActiveColor: #FFAA6A
+
+$color: #555555
+$quoteColor: #B3B3B3
+$headerColor: #555555
+$color_content_p: #555555
+
+
+
+
+
+
+/* reset */
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section
+	margin: 0
+	padding: 0
+	border: 0
+article, aside, dialog, figure, footer, header, hgroup, nav, section
+	display: block
+ul, ol, li
+	list-style: none
+table
+	border-collapse: separate
+	border-spacing: 0
+caption, th, td
+	text-align: left
+	font-weight: normal
+	float: none !important
+table, th, td
+	vertical-align: middle
+blockquote:before, blockquote:after, q:before, q:after
+	content: ''
+blockquote, q
+	quotes: "" ""
+a img
+	border: none
+
+
+
+/* normalize */
+// general
+body
+	margin: 0 auto
+	width: $siteWidth
+	background: $siteBackground
+	font: 14px/1.2 Arial, Tahoma
+	color: $color
+
+// link
+a
+	text-decoration: none
+a:link
+	color: $linkNormalColor
+a:visited
+	color: $linkVisitedColor
+a:hover
+	color: $linkHoverColor
+a:active
+	color: $linkActiveColor
+
+// text
+h1, h2, h3, h4, h5, h6
+	font-weight: bold
+	color: $headerColor
+h1
+	font-size: 38px
+h2
+	font-size: 30px
+h3
+	font-size: 22px
+h4
+	font-size: 16px
+h5
+	font-size: 14px
+h6
+	font-size: 12px
+
+p
+	
+strong, em
+	font-weight: bold
+
+q, blockquote
+	padding: 20px 30px
+	color: $quoteColor
+	font-style: italic
+
+// list
+ul, ol
+	padding: 0
+li
+
+// table
+
+// form
+
+
+
+
+
+
+/* custom layout */
+html
+	height: 100%
+body
+	float: left
+	width: auto
+	min-width: 100%
+	height: 100%
+	-webkit-text-size-adjust: none
+
+.body-wrapper
+	position: relative
+	min-width: 100%
+	min-height: 100%
+	background: #F0F0F0
+
+.aside
+	position: absolute
+	overflow: visible
+	width: 220px
+	height: 100%
+	background-color: #444442
+
+.spliter
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	margin-left: 220px
+	width: 3px
+	border: 1px solid #C9C9C9
+	background-color: #D5D5D5
+
+.main
+	position: relative
+	display: inline-block
+	margin-left: 225px
+
+.list-wrapper
+	width: 100%
+	padding: 0 150px 200px 0
+
+
+
+
+/* custom */
+
+// aside
+
+.m-logo
+	.logo
+		position: relative
+		margin: 24px 18px 70px
+		width: 90px
+		height: 56px
+		background-image: url(images/logo.png)
+
+.m-setting
+	position: absolute
+	overflow: hidden
+	top: 25px
+	right: 20px
+
+	&>.w
+		float: right
+
+	.item
+		display: block
+		visibility: hidden
+		float: right
+.m-setting:hover
+	.item
+		visibility: visible
+
+.m-setting-dialog
+	display: none
+	position: absolute
+	z-index: 100
+	left: 100px
+	top: 40px
+	background: #E9E9E9
+	border: 1px solid #E1E1E1
+
+	.editor
+		display: block
+		margin: 30px 10px 10px
+		padding: 10px
+		width: 300px
+		height: 400px
+	.button
+		float: right
+		margin: 8px 10px 8px 0
+		padding: 4px 10px
+		color: #5a5a5a
+		text-align: center
+	.submit
+		background: #89E780
+		border: 1px solid #80E178
+	.cancel
+		background: #F7957F
+		border: 1px solid #EF8B75
+
+.m-menu
+	position: relative
+
+	&>.w
+		position: relative
+		overflow: hidden
+
+	.m-menu-header
+		display: none
+
+		.title
+			margin: 16px 0 24px
+			font: 12px/1.2 arial
+			font-weight: 800
+			color: #888
+			text-align: center
+
+	.item-container
+		position: relative
+		margin: 0
+	
+		.item
+			margin-bottom: 4px
+			color: #DFD8D5
+
+			.link-js
+				.menu-close
+					display: none
+					margin-top: 1px
+					width: 11px
+					height: 11px
+					background-position: -120px -50px
+			.link-js.highlight
+				.menu-close
+					display: block
+			.link-js.dim:hover
+				.menu-close
+					display: block
+
+			.link-js.highlight
+				color: #F9A628
+			.link-js.dim
+				color: #93C72B
+			.link-js:hover
+				background: #4A4A48
+				color: #FBC169
+
+
+	// defination of menu item
+	.m-mediablock
+		display: block
+		overflow: hidden
+		padding: 4px 0
+
+		.img
+			display: none
+			float: left
+			margin: 5px 0 5px 12px
+			width: 18px
+			height: 18px
+		.title
+			display: inline-block
+			position: relative
+			float: left
+			margin: 0 20px
+		.extra
+			float: right
+			margin: 2px 20px
+
+
+// main
+
+.m-list-wrapper
+	position: relative
+	float: left
+	margin-right: 10px
+	min-width: 540px
+	width: 610px
+	
+	// * list
+	.m-list
+		position: relative
+		
+		.m-list-header-wrapper
+			position: relative
+			z-index: 200
+			
+			&>.w
+				position: relative
+				float: left
+				width: 100%
+
+			// * function
+			.m-function
+				position: relative
+				background-color: #F1F1F1
+				border: 1px solid #E1E1E1
+
+				&>.w
+					overflow: hidden
+					margin: 15px 18px 22px
+
+				.list-style
+					float: right
+					margin-bottom: 28px
+					
+					.item
+						float: right
+						margin-left: 5px
+						background-color: #767672
+
+				.filter-container
+					position: relative
+					float: left
+					margin-bottom: 12px
+
+					.icon-filter
+						display: none
+						position: absolute
+						top: 6px
+						left: 4px
+						width: 12px
+						height: 12px
+						background-position: -140px -30px
+
+				.highlight-container
+					position: relative
+					float: left
+					clear: left
+					
+					.icon-highlight
+						display: none
+						position: absolute
+						top: 6px
+						left: 4px
+						width: 12px
+						height: 12px
+						background-position: -160px -30px
+				
+				// defination
+				.c-input-style
+					.box
+						border-bottom: 2px solid #DFE1DC
+						color: #A7A59A
+										
+						.box-text
+							display: block
+							overflow: hidden
+							margin: 4px 18px 4px 8px
+							min-width: 3em
+							max-width: 320px
+							height: 1em
+						.box-editor
+							display: none
+							margin: 0
+							padding: 4px 8px 4px 8px
+							min-width: 12em
+							max-width: 320px
+							height: 1em
+							border: 1px solid #e2e2e2
+							background-color: #fafafa
+					
+					.box.edit
+						background-color: #DEE1DA
+						
+						.box-text
+							display: none
+						.box-editor
+							display: block
+		
+			// * list header
+			.m-list-header
+				overflow: hidden
+				background-color: #E3E3E3
+				border-bottom: 2px solid #C3C3C3
+
+				&>.w
+					overflow: hidden
+					padding: 0.8em 0
+
+				.title
+					float: left
+					margin: 0 22px
+					font-size: 18px
+					font-weight: bold
+					color: #8B8B8B
+				.img
+					float: left
+					width: 18px
+					height: 18px
+					// background-color: #C3C3C3
+
+				.functions
+					float: right
+					margin-right: 18px
+
+					.item
+						float: left
+					.refresh
+						margin-right: 5px
+						width: 54px
+						height: 20px
+						background-color: #DFDFDF
+						background-position: -120px 0
+					.list-close
+						width: 18px
+						height: 20px
+						background-color: #DFDFDF
+						background-position: -180px 0
+		
+		// * list inner
+		.m-list-inner
+			position: relative
+			margin: 25px 20px 0
+
+			.item
+				margin-bottom: 14px
+
+		// defination
+		.m-mediablock
+			overflow: hidden
+			
+			.media-wrapper
+				float: left
+			.img
+				margin-right: 16px
+
+				.img-target
+					display: block
+					width: 120px
+					height: 75px
+					border: 1px solid #333
+			.content-wrapper
+				overflow: hidden
+			.title
+				display: inline-block
+				overflow: hidden
+				margin-bottom: 4px
+				height: 1.2em
+				font-size: 1em
+				font-weight: 600
+				color: #584A40
+			.title:hover
+				color: #112211
+			.description
+				overflow: hidden
+				margin-bottom: 4px
+				height: 2.4em
+				font-size: 13px
+				color: #7E7964
+			.meta
+				overflow: hidden
+				height: 1.2em
+				font-size: 12px
+				color: #91918C
+
+				.meta-item
+					float: left
+					margin-right: 6px
+
+				.author
+				.date
+				.time
+
+				.category
+				.tag
+				.views
+				.comments
+
+	.next-page
+		margin: 2em 0 0
+
+		.button
+			margin: 8px auto
+			padding: 10px 20px
+			text-align: center
+			background: #ddd
+			border: 1px solid #d3d3d3
+		.button:hover
+			background: #d1d1d1
+			border: 1px solid #aeaeae
+
+/* others */
+
+.sprites
+	width: 22px
+	height: 22px
+	background-image: url(images/sprites.png)
+
+.icon-setting
+	background-position: -90px 0
+.icon-list-style-normal
+	background-position: -60px 0
+.icon-list-style-compact
+	background-position: -60px -30px
+.icon-list-style-title
+	background-position: 0 0
+.icon-list-style-compress
+	// background-position: -30px -30px
+.icon-list-style-grid
+	background-position: -30px -30px
+
+
+.limit-one-line
+	overflow: hidden
+	height: 1.2em
+	white-space: nowrap
+	text-overflow: ellipsis
+.limit-two-lines
+	overflow: hidden
+	height: 2.4em
+
+.link-js
+	cursor: pointer
+
+
+
+
+
+
+
+
+
+
+/* custom - list style */
+
+
+
+// clone list header
+.m-list-wrapper
+	.m-list
+		.m-list-header.clone
+			&>.w
+				padding: 4px 4px 6px
+				text-align: center
+			.title
+				display: inline-block
+				float: none
+				font-size: 16px
+				margin-top: 4px
+
+
+// list style compact
+.m-list-wrapper
+	.m-list.list-style-compact
+		.m-list-inner
+			.item
+				margin-bottom: 8px
+	
+		// defination
+		.m-mediablock
+			overflow: hidden
+			
+			.media-wrapper
+				float: left
+			.img
+				margin-right: 13px
+
+				.img-target
+					display: block
+					width: 91px
+					height: 56px
+					border: 1px solid #555
+			.content-wrapper
+				overflow: hidden
+			.title
+				overflow: hidden
+				font-weight: 600
+				margin: 2px 0 4px
+			.description
+				height: 2.5em
+				font-size: 14px
+				line-height: 1.25
+			.meta
+				display: none
+
+// list style title
+.m-list-wrapper
+	.m-list.list-style-title
+		.m-list-inner
+			.item
+				margin-bottom: 8px
+	
+		// defination
+		.m-mediablock
+			overflow: hidden
+			
+			.media-wrapper
+				display: none
+			.img
+
+			.content-wrapper
+				overflow: hidden
+			.title
+				font-weight: 400
+			.description
+				display: none
+			.meta
+				display: none
+
+// .list-style-compress
+.m-list-wrapper
+	.m-list.list-style-compress___
+		.m-list-inner
+			.item
+				margin-bottom: 8px
+	
+		// defination
+		.m-mediablock
+			overflow: hidden
+			
+			.media-wrapper
+				display: none
+			.img
+
+			.content-wrapper
+				overflow: hidden
+			.title
+				overflow: hidden
+				margin-bottom: 4px
+				height: 1.2em
+				font-size: 1em
+				font-weight: 400
+				color: #362A22
+			.description
+				overflow: hidden
+				margin-bottom: 4px
+				height: 1.2em
+				font-size: 13px
+				color: #6D6654
+			.meta
+				display: none
+				overflow: hidden
+				height: 1.2em
+				font-size: 12px
+				color: #B19260
+
+
+// list style grid
+.m-list-wrapper
+	.m-list.list-style-grid
+		.m-list-inner
+			.item
+				margin-bottom: 8px
+	
+		// defination
+		.m-mediablock
+			position: relative
+			display: inline-block
+			overflow: hidden
+			margin-right: 8px
+			width: 122px
+			vertical-align: top
+			
+			.media-wrapper
+				float: none
+				margin-bottom: 2px
+			.img
+
+				.img-target
+					display: block
+					width: 120px
+					height: 75px
+					border: 1px solid #333
+			.content-wrapper
+				overflow: hidden
+				height: 6em
+
+			.title-wrapper
+				overflow: hidden
+				margin-bottom: 4px
+				max-height: 4.7em
+				
+				a
+					display: block
+				.title
+					display: inline
+					font-size: 1em
+					font-weight: 200
+					color: #584A40
+			.description
+				display: none
+				// overflow: hidden
+				// margin-bottom: 4px
+				// height: 2.4em
+				// font-size: 13px
+				// color: #7E7964
+			.meta
+				position: absolute
+				overflow: hidden
+				bottom: 0
+				height: 1.2em
+				font-size: 12px
+				color: #91918C
+
+		// spliter
+		.spliter-horizon.counter
+			display: none
+
+
+// list item collepse
+.m-list
+	.item.collepse
+		display: inline-block
+		width: 10%
+		height: 0
+		border-top: 3px solid #ddd
+
+
+// list item highlight
+.m-list
+	.item.highlight-item
+		margin-left: -8px
+		padding-left: 4px
+		border-left: 4px solid #FBB45D
+
+
+
+
+
+
+// spliters
+.m-list
+	.m-list-inner
+		.spliter-horizon.counter
+			display: none
+			position: absolute
+			float: right
+			right: 0
+			margin: -3px -23px 0 0
+			background: transparent
+			font: bold italic 22px/1 arial
+			color: #aaa
+		
+		.spliter-horizon.date
+			display: none
+			margin: 8px 0
+			padding: 5px 10px
+			min-height: 12px
+			border-top: 1px solid #FBB55F
+			border-bottom: 1px solid #FBB55F
+
+		.spliter-horizon.page
+			text-align: center
+
+			.inner
+				display: inline-block
+				margin: 10px 0 20px
+				padding: 6px 0
+				width: 100%
+				border-top: 1px solid #ccc
+				border-bottom: 1px solid #ccc
+				background: #e3e3e3
+				font-size: 12px
+				line-height: 1
+				color: #7A756F
+
+
+
+// tooltip
+.m-tooltip
+	position: fixed
+	z-index: 10000
+	top: 10px
+	right: 20px
+	padding: 10px
+
+	.m-tooltip-container
+		.item
+			float: right
+			clear: both
+			border: 1px solid #ddd
+			background: #eee
+			margin-bottom: 4px
+
+	.m-mediablock
+		overflow: hidden
+
+		.img
+			display: none
+			float: left
+			margin: 5px 8px 5px 5px
+			width: 16px
+			height: 16px
+			border: 1px solid #ccc
+		.title
+			float: left
+			margin: 4px 16px
+
+// tooltip custom
+.m-tooltip
+	.m-tooltip-container
+		.item.log
+			border: 1px solid #90CB60
+			background: #AEE77E
+			margin-bottom: 4px
+			color: #607251
+		.item.warn, .item.error
+			border: 1px solid #DBA67A
+			background: #EFB98C
+			margin-bottom: 4px
+			color: #60533F
+
+
+/*  helpers  */
+
+.cf
+	*zoom: 1
+.cf:after
+	clear: both
+.cf:before, .cf:after
+	display: table
+	content: ""
+	line-height: 0
+.cl-l
+	clear: left
+.cl-r
+	clear: right
+.cl-b
+	clear: both
+.fl-l
+	float: left
+.fl-r
+	float: right
+.pos-r
+	position: relative
+.pos-a
+	position: absolute
+.dir-r
+	direction: rtl
+.text-l
+	text-align: left
+.text-c
+	text-align: center
+.text-r
+	text-align: right
+.mg-h0
+	margin-left: 0
+	margin-right: 0
+.mg-v0
+	margin-top: 0
+	margin-bottom: 0
+.hide
+	display: none!important
+.show
+	display: block!important

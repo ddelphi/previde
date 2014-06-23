@@ -1,0 +1,77 @@
+{
+	"params": {
+		"testSite": {
+			"fetcher": {
+				"url": "http://www.acfun.com/dynamic/channel/1.aspx?channelId=94&orderBy=0",
+				"baseUrl": "http://www.acfun.com",
+				"nextPattern": "url.replace(/(\\d+?)\\.aspx/, function(who, p1) {var n = parseInt(p1) + 1; return n + '.aspx'})"
+			},
+			"menu": {
+				"uid": "testSite",
+				"title": "testing site",
+				"icon": ""
+			},
+			"model": {
+				"item": {
+					"_": ".unit",
+					"[]": {
+						"img": {
+							"_": ".preview",
+							"src": "_ -> [src]"
+							},
+						"title": {
+							"_": ".title",
+							"text": ".title",
+							"href": "_ -> [href]"
+						},
+						"desc": {
+							"_": ".desc",
+							"text": ""
+						},
+						"meta": {
+							"_": ".name, .date, .info-hover",
+							"text": ".name | / | .date | / | .info-hover"
+						}
+					}
+				}
+			}
+		},
+
+		"local_testing": {
+			"fetcher": {
+				"url": "content/acfun.html",
+				"nextPattern": "url.replace(/acfun(\\d*)/, function(who, p1) {var m = p1 ? p1 : 1; return 'acfun' + (parseInt(m) + 1)})"
+			},
+			"menu": {
+				"uid": "local_testing",
+				"title": "local test",
+				"icon": ""
+			},
+			"model": {
+				"item": {
+					"_": ".unit",
+					"[]": {
+						"img": {
+							"_": ".preview",
+							"src": "_ -> [src]"
+							},
+						"title": {
+							"_": ".title",
+							"text": ".title",
+							"href": "_ -> [href]"
+						},
+						"desc": {
+							"_": ".desc",
+							"text": ""
+						},
+						"meta": {
+							"_": ".name, .date, .info-hover",
+							"text": ".name | / | .date | / | .info-hover"
+						}
+					}
+				}
+			}
+		}
+	},
+	"list": {}
+}
