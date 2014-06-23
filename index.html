@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>previde</title>
+    <meta charset='utf-8'>
+    <meta content='' name='description'>
+    <meta content='' name='keywords'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <link href='favicon.ico' rel='shortcut icon'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <script src='lib/$$$.js'></script>
+    <script src='lib/polyfill.js'></script>
+    <script src='lib/jquery.min.js'></script>
+    <script src='lib/jquery.slimscroll.min.js'></script>
+    <script src='lib/Unittest.js'></script>
+    <script src='lib/EventSystem.js'></script>
+    <script src='core.js'></script>
+    <script src='plugins/event.js'></script>
+    <script src='plugins/localStorage.js'></script>
+    <script src='plugins/storage.js'></script>
+    <script src='plugins/dbParams.js'></script>
+    <script src='plugins/contentMapper.js'></script>
+    <script src='plugins/fetcher.js'></script>
+    <script src='plugins/helper.js'></script>
+    <script src='plugins/logger.js'></script>
+    <script src='plugins/template.js'></script>
+    <script src='plugins/textTools.js'></script>
+    <script src='modules/initial.js'></script>
+    <script src='modules/moduleEvents.js'></script>
+    <script src='modules/ui_filterBox.js'></script>
+    <script src='modules/ui_functionPanel.js'></script>
+    <script src='modules/ui_highlight.js'></script>
+    <script src='modules/ui_horizonSpliter.js'></script>
+    <script src='modules/ui_list.js'></script>
+    <script src='modules/ui_list_buttons.js'></script>
+    <script src='modules/ui_listStyleIcons.js'></script>
+    <script src='modules/ui_listWrapper.js'></script>
+    <script src='modules/ui_menu.js'></script>
+    <script src='modules/ui_setting.js'></script>
+    <script src='modules/ui_tooltip.js'></script>
+    <script src='core_start.js'></script>
+    <script src='page.mod.testcase.js'></script>
+  </head>
+  <body>
+    <div class='body-wrapper cf'>
+      <div class='aside cf'>
+        <div class='s'>
+          <div class='m-logo'>
+            <div class='w'>
+              <div class='logo'></div>
+            </div>
+          </div>
+        </div>
+        <div class='s'>
+          <div class='m-setting' id='setting'>
+            <div class='w'>
+              <ul>
+                <li class='item'>
+                  <div alt='setting' class='link-js sprites icon-setting'></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class='m-setting-dialog' id='setting-dialog'>
+            <div class='w'>
+              <div class='link-js button submit'>
+                submit
+              </div>
+              <div class='link-js button cancel'>
+                cancel
+              </div>
+              <textarea class='editor'></textarea>
+            </div>
+          </div>
+        </div>
+        <div class='s'>
+          <div class='m-menu' id='menu'>
+            <div class='w'>
+              <div class='m-menu-header'>
+                <div class='w'>
+                  <div class='title'>
+                    - PREVIDE -
+                  </div>
+                </div>
+              </div>
+              <ul class='item-container'>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='spliter'></div>
+      <div class='main'>
+        <div class='list-wrapper cf' id='list-wrapper'></div>
+        <div class='template list-wrapper hide'>
+          <div class='m-list-wrapper' data-uid='${uid}'>
+            <div class='w'>
+              <div class='m-list' data-uid='${uid}'>
+                <div class='w'>
+                  <div class='m-list-header-wrapper cf' data-uid='${uid}'>
+                    <div class='w' data-uid='${uid}'>
+                      <div class='m-function' data-uid='${uid}'>
+                        <div class='w'>
+                          <div class='list-style'>
+                            <ul>
+                              <li class='item'>
+                                <div class='link-js sprites icon-list-style-normal' data-listStyle='list-style-normal' data-uid='${uid}' href='#' title='normal'></div>
+                              </li>
+                              <li class='item'>
+                                <div class='link-js sprites icon-list-style-compact' data-listStyle='list-style-compact' data-uid='${uid}' href='#' title='compact'></div>
+                              </li>
+                              <li class='item'>
+                                <div class='link-js sprites icon-list-style-title' data-listStyle='list-style-title' data-uid='${uid}' href='#' title='title'></div>
+                              </li>
+                              <li class='item'>
+                                <div class='link-js sprites icon-list-style-grid' data-listStyle='list-style-grid' data-uid='${uid}' href='#' title='grid'></div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class='filter-container c-input-style'>
+                            <div class='filter-box box' data-uid='${uid}'>
+                              <div class='filter-label box-text' data-uid='${uid}' title='Filter'>
+                                some filter
+                              </div>
+                              <i class='sprites icon-filter' title='Filter'></i>
+                              <input class='filter-editor box-editor' data-uid='${uid}'>
+                            </div>
+                          </div>
+                          <div class='highlight-container c-input-style'>
+                            <div class='highlight-box box' data-uid='${uid}'>
+                              <div class='highlight-label box-text' data-uid='${uid}' title='highlight'>
+                                some highlight
+                              </div>
+                              <i class='sprites icon-highlight' title='highlight'></i>
+                              <input class='highlight-editor box-editor' data-uid='${uid}'>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='m-list-header' data-uid='${uid}'>
+                        <div class='w'>
+                          <h2 class='title'>
+                            ${title}
+                          </h2>
+                          <div class='img'></div>
+                          <ul class='functions'>
+                            <li class='item'>
+                              <div class='link-js sprites refresh' data-uid='${uid}' href='#'></div>
+                            </li>
+                            <li class='item'>
+                              <div class='link-js sprites list-close' data-uid='${uid}' href='#'></div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='m-list-inner'>
+                    <div class='w'>
+                      <ul class='item-container' data-uid='${uid}'>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='next-page'>
+                    <div class='link-js button' data-uid='${uid}'>
+                      next page
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='footer'>
+        <div class='m-tooltip'>
+          <div class='w'>
+            <ul class='m-tooltip-container'>
+              <li class='item noop hide'></li>
+              <li class='item m-mediablock log hide'>
+                <div class='w'>
+                  <div class='img'>
+                    *
+                  </div>
+                  <div class='title'>
+                    the tooltip messages
+                  </div>
+                </div>
+              </li>
+              <li class='item m-mediablock warn hide'>
+                <div class='w'>
+                  <div class='img'>
+                    *
+                  </div>
+                  <div class='title'>
+                    the another tooltip messages
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='template hide'>
+      <div class='_template list-wrapper'>
+        <div class="m-list-wrapper" data-uid="${uid}"><div class="w"><div class="s"><div class="m-function"><div class="w"><div class="list-style"><ul><li class="item sprite icon-list-style-1">*</li><li class="item sprite icon-list-style-2">*</li><li class="item sprite icon-list-style-3">*</li><li class="item sprite icon-list-style-4">*</li></ul></div><div class="filter-container c-input-style"><div class="filter-box box"><div class="filter-label box-text" data-uid="${uid}">some filter</div><input class="filter-editor box-editor" data-uid="${uid}"></div></div><div class="sort-container c-input-style"><div class="sort-box box edit"><div class="sort-label box-text">some sort</div><input class="sort-editor box-editor"></div></div></div></div></div><div class="s"><div class="m-list"><div class="w"><div class="m-list-header"><div class="w"><h2 class="title">the title</h2><div class="img">*</div></div></div><div class="m-list-inner"><div class="w"><ul class="item-container" data-uid="${uid}"></ul></div></div></div></div></div></div></div>
+      </div>
+      <div class='template list item'>
+        <li class='item m-mediablock' data-uid='${uid}'><div class='media-wrapper'><div class='img'><img class='img-target' src='${img.src}'></div></div><div class='content-wrapper'><div class="title-wrapper"><a href='${title.href}' title='${title.text}' target="_blank"><h3 class='title'>${title.text}</h3></a></div><div class='limit-two-lines description'><p>${desc.text}</p></div><div class='meta'><ul><li class="meta-item text">${meta.text}</li><li class="meta-item author">${meta.author}</li><li class="meta-item date" data-date="${meta.digiDate}">${meta.date}</li><li class="meta-item time">${meta.time}</li><li class="meta-item category">${meta.category}</li><li class="meta-item tag">${meta.tag}</li><li class="meta-item views">${meta.views}</li><li class="meta-item comments">${meta.comments}</li></ul></div></div></li>
+      </div>
+      <div class='template list page'>
+        <div class='page'></div>
+      </div>
+      <div class='template menu item'>
+        <li class='item'><div class='link-js m-mediablock cf' data-uid='${uid}'><div class='img' style='background-image: url(${icon})'></div><div class='title'>${title}</div><div class="extra"><div class="sprites menu-close" data-uid='${uid}'></div></div></div></li>
+      </div>
+      <div class='template tooltip item'>
+        <li class='item m-mediablock ${type}'><div class='w'><div class='img'></div><div class='title'>${title}</div></div></li>
+      </div>
+      <div class='template spliter-horizon counter'>
+        <li class='spliter-horizon counter'><div class="inner">${count}</div></li>
+      </div>
+      <div class='template spliter-horizon page'>
+        <li class='spliter-horizon page'><div class="inner">Page ${page}</div></li>
+      </div>
+      <div class='template spliter-horizon date'>
+        <li class='spliter-horizon date' data-date="${date}"><div class="inner">${date}</div></li>
+      </div>
+    </div>
+  </body>
+</html>

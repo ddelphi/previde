@@ -1,0 +1,169 @@
+
+-$faviconLink = "favicon.ico"
+-$styleLink = "style.css"
+
+
+
+
+
+!!! 5
+%html
+	%head
+		%title previde
+		%meta(charset="utf-8")
+		%meta(name="description" content="")
+		%meta(name="keywords" content="")
+		%meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		%link(rel="shortcut icon" href=$faviconLink)
+		%link(rel="stylesheet" type="text/css" href=$styleLink)
+		%script(src="lib/$$$.js")
+		%script(src="lib/polyfill.js")
+		%script(src="lib/jquery.min.js")
+		%script(src="lib/jquery.slimscroll.min.js")
+		%script(src="lib/Unittest.js")
+		%script(src="lib/EventSystem.js")
+
+		%script(src="core.js")
+
+		%script(src="plugins/event.js")
+		%script(src="plugins/localStorage.js")
+		%script(src="plugins/storage.js")
+		%script(src="plugins/dbParams.js")
+		%script(src="plugins/contentMapper.js")
+		%script(src="plugins/fetcher.js")
+		%script(src="plugins/helper.js")
+		%script(src="plugins/logger.js")
+		%script(src="plugins/template.js")
+		%script(src="plugins/textTools.js")
+
+		%script(src="modules/initial.js")
+		%script(src="modules/moduleEvents.js")
+		%script(src="modules/ui_filterBox.js")
+		%script(src="modules/ui_functionPanel.js")
+		%script(src="modules/ui_highlight.js")
+		%script(src="modules/ui_horizonSpliter.js")
+		%script(src="modules/ui_list.js")
+		%script(src="modules/ui_list_buttons.js")
+		%script(src="modules/ui_listStyleIcons.js")
+		%script(src="modules/ui_listWrapper.js")
+		%script(src="modules/ui_menu.js")
+		%script(src="modules/ui_setting.js")
+		%script(src="modules/ui_tooltip.js")
+
+		%script(src="core_start.js")
+		%script(src="page.mod.testcase.js")
+
+	%body
+		.body-wrapper.cf
+			.aside.cf
+				.s
+					.m-logo
+						.w
+							.logo
+				.s
+					#setting.m-setting
+						.w
+							%ul
+								%li.item
+									.link-js.sprites.icon-setting(alt="setting")
+					#setting-dialog.m-setting-dialog
+						.w
+							.link-js.button.submit
+								submit
+							.link-js.button.cancel
+								cancel
+							%textarea.editor
+				.s
+					#menu.m-menu
+						.w
+							.m-menu-header
+								.w
+									.title
+										\- PREVIDE -
+							%ul.item-container
+
+			.spliter			
+			.main
+				#list-wrapper.list-wrapper.cf
+				.template.list-wrapper.hide
+					.m-list-wrapper(data-uid="${uid}")
+						.w
+							.m-list(data-uid="${uid}")
+								.w
+									.m-list-header-wrapper.cf(data-uid="${uid}")
+										.w(data-uid="${uid}")
+											.m-function(data-uid="${uid}")
+												.w
+													.list-style
+														%ul
+															%li.item
+																.link-js.sprites.icon-list-style-normal(href="#" title="normal" data-uid="${uid}" data-listStyle="list-style-normal")
+															%li.item
+																.link-js.sprites.icon-list-style-compact(href="#" title="compact" data-uid="${uid}" data-listStyle="list-style-compact")
+															%li.item
+																.link-js.sprites.icon-list-style-title(href="#" title="title" data-uid="${uid}" data-listStyle="list-style-title")
+															%li.item
+																.link-js.sprites.icon-list-style-grid(href="#" title="grid" data-uid="${uid}" data-listStyle="list-style-grid")
+													.filter-container.c-input-style
+														.filter-box.box(data-uid="${uid}")
+															.filter-label.box-text(title="Filter" data-uid="${uid}")
+																some filter
+															%i.sprites.icon-filter(title="Filter")
+															%input.filter-editor.box-editor(data-uid="${uid}")
+													.highlight-container.c-input-style
+														.highlight-box.box(data-uid="${uid}")
+															.highlight-label.box-text(title="highlight" data-uid="${uid}")
+																some highlight
+															%i.sprites.icon-highlight(title="highlight")
+															%input.highlight-editor.box-editor(data-uid="${uid}")
+											.m-list-header(data-uid="${uid}")
+												.w
+													%h2.title
+														${title}
+													.img
+													
+													%ul.functions
+														%li.item
+															.link-js.sprites.refresh(href="#" data-uid="${uid}")
+														%li.item
+															.link-js.sprites.list-close(href="#" data-uid="${uid}")
+									.m-list-inner
+										.w
+											%ul.item-container(data-uid="${uid}")
+									.next-page
+										.link-js.button(data-uid="${uid}")
+											next page
+			.footer
+				.m-tooltip
+					.w
+						%ul.m-tooltip-container
+							%li.item.noop.hide
+							%li.item.m-mediablock.log.hide
+								.w
+									.img
+										*
+									.title
+										the tooltip messages
+							%li.item.m-mediablock.warn.hide
+								.w
+									.img
+										*
+									.title
+										the another tooltip messages
+		.template.hide
+			._template.list-wrapper
+				<div class="m-list-wrapper" data-uid="${uid}"><div class="w"><div class="s"><div class="m-function"><div class="w"><div class="list-style"><ul><li class="item sprite icon-list-style-1">*</li><li class="item sprite icon-list-style-2">*</li><li class="item sprite icon-list-style-3">*</li><li class="item sprite icon-list-style-4">*</li></ul></div><div class="filter-container c-input-style"><div class="filter-box box"><div class="filter-label box-text" data-uid="${uid}">some filter</div><input class="filter-editor box-editor" data-uid="${uid}"></div></div><div class="sort-container c-input-style"><div class="sort-box box edit"><div class="sort-label box-text">some sort</div><input class="sort-editor box-editor"></div></div></div></div></div><div class="s"><div class="m-list"><div class="w"><div class="m-list-header"><div class="w"><h2 class="title">the title</h2><div class="img">*</div></div></div><div class="m-list-inner"><div class="w"><ul class="item-container" data-uid="${uid}"></ul></div></div></div></div></div></div></div>
+			.template.list.item
+				<li class='item m-mediablock' data-uid='${uid}'><div class='media-wrapper'><div class='img'><img class='img-target' src='${img.src}'></div></div><div class='content-wrapper'><div class="title-wrapper"><a href='${title.href}' title='${title.text}' target="_blank"><h3 class='title'>${title.text}</h3></a></div><div class='limit-two-lines description'><p>${desc.text}</p></div><div class='meta'><ul><li class="meta-item text">${meta.text}</li><li class="meta-item author">${meta.author}</li><li class="meta-item date" data-date="${meta.digiDate}">${meta.date}</li><li class="meta-item time">${meta.time}</li><li class="meta-item category">${meta.category}</li><li class="meta-item tag">${meta.tag}</li><li class="meta-item views">${meta.views}</li><li class="meta-item comments">${meta.comments}</li></ul></div></div></li>
+			.template.list.page
+				<div class='page'></div>
+			.template.menu.item
+				<li class='item'><div class='link-js m-mediablock cf' data-uid='${uid}'><div class='img' style='background-image: url(${icon})'></div><div class='title'>${title}</div><div class="extra"><div class="sprites menu-close" data-uid='${uid}'></div></div></div></li>
+			.template.tooltip.item
+				<li class='item m-mediablock ${type}'><div class='w'><div class='img'></div><div class='title'>${title}</div></div></li>
+			.template.spliter-horizon.counter
+				<li class='spliter-horizon counter'><div class="inner">${count}</div></li>
+			.template.spliter-horizon.page
+				<li class='spliter-horizon page'><div class="inner">Page ${page}</div></li>
+			.template.spliter-horizon.date
+				<li class='spliter-horizon date' data-date="${date}"><div class="inner">${date}</div></li>
