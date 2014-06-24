@@ -76,7 +76,7 @@ Then analyse the difference of the urls, to write a replace codes for the "nextP
 	http://xxx.com/theUserId/page_1.asp
 	http://xxx.com/theUserId/page_2.asp
 	
-	// then the value to the key "nextPattern" should be:
+	// then the value to the key "nextPattern" should be (codes are in string form):
 	
 	url.replace(/page_(\\d+)/, function(whole, p1) {
 		var num = parseInt(p1) + 1
